@@ -36,6 +36,9 @@ class HashGenerator
      */
     public function generate()
     {
+        echo "[Airdrop] ";
+        echo json_encode($this->asArray());
+        echo "\n";
         return md5(json_encode($this->asArray()));
     }
 
