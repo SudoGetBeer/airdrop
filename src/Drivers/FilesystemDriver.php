@@ -141,6 +141,7 @@ class FilesystemDriver extends BaseDriver
      */
     public function disk()
     {
+        $this->output('Using disk ' . $this->config['disk']);
         return Storage::disk($this->config['disk']);
     }
 
@@ -149,6 +150,7 @@ class FilesystemDriver extends BaseDriver
      */
     public function exists()
     {
+        $this->output('Check file ' . $this->remoteStashPath() . $this->stashedPackageFilename());
         return $this->disk()->exists($this->remoteStashPath() . $this->stashedPackageFilename());
     }
 
